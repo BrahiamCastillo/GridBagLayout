@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
+import java.awt.Insets;
 import java.util.Vector;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -43,6 +44,7 @@ public class Ventana {
 		titulo=BorderFactory.createTitledBorder(BorderFactory.createMatteBorder(1,1,1,1,Color.black),"Datos personales");
 		panel1.setBorder(titulo);
 		constraints=new GridBagConstraints();
+		constraints.insets=new Insets(2,2,2,2);
 		
 		uno=new JLabel("Nombres del contacto:");
 		constraints.gridx=0;
@@ -57,7 +59,7 @@ public class Ventana {
 		campo1=new JTextField();
 		constraints.gridx=0;
 		constraints.gridy=2;
-		constraints.gridwidth=1;
+		constraints.gridwidth=2;
 		constraints.gridheight=1;
 		constraints.anchor=GridBagConstraints.WEST;
 		constraints.fill=GridBagConstraints.HORIZONTAL;
@@ -78,7 +80,7 @@ public class Ventana {
 		campo2=new JTextField();
 		constraints.gridx=0;
 		constraints.gridy=4;
-		constraints.gridwidth=1;
+		constraints.gridwidth=2;
 		constraints.gridheight=1;
 		constraints.fill=GridBagConstraints.HORIZONTAL;
 		constraints.weightx=0.0;
@@ -142,7 +144,7 @@ public class Ventana {
 		campo5=new JTextField();
 		constraints.gridx=0;
 		constraints.gridy=8;
-		constraints.gridwidth=1;
+		constraints.gridwidth=2;
 		constraints.gridheight=1;
 		constraints.anchor=GridBagConstraints.NORTHWEST;
 		constraints.fill=GridBagConstraints.HORIZONTAL;
@@ -200,7 +202,7 @@ public class Ventana {
 		constraints.weightx=1.0;
 		panel2.add(boton2,constraints);
 		
-		boton3=new JButton("Otro botón");
+		boton3=new JButton("Configurar conexión");
 		constraints.gridx=3;
 		constraints.gridy=1;
 		constraints.gridwidth=1;
