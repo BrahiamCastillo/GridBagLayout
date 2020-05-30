@@ -5,9 +5,12 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Image;
 import java.util.Vector;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -27,6 +30,8 @@ public class Ventana {
 	JTextField campo1, campo2, campo3, campo4, campo5;
 	JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8, boton9;
 	JComboBox combo;
+	ImageIcon imagen;
+	Icon icono;
 	
 	Ventana() {
 		Estructura();
@@ -99,7 +104,7 @@ public class Ventana {
 		constraints.anchor=GridBagConstraints.NORTHWEST;
 		constraints.fill=GridBagConstraints.HORIZONTAL;
 		constraints.weightx=0.0;
-		constraints.weighty=1.0;
+		constraints.weighty=0.0;
 		panel1.add(campo3,constraints);
 		
 		cuatro=new JLabel("Celular:");
@@ -130,8 +135,8 @@ public class Ventana {
 		constraints.gridheight=1;
 		constraints.anchor=GridBagConstraints.NORTHWEST;
 		constraints.fill=GridBagConstraints.NONE;
-		constraints.weightx=1.0;
-		constraints.weighty=0.0;
+		constraints.weightx=0.0;
+		constraints.weighty=1.0;
 		panel1.add(cinco,constraints);
 		
 		campo5=new JTextField();
@@ -225,12 +230,20 @@ public class Ventana {
 		constraints.gridy=1;
 		constraints.gridwidth=1;
 		constraints.gridheight=1;
-		constraints.fill=GridBagConstraints.HORIZONTAL;
+		constraints.fill=GridBagConstraints.VERTICAL;
 		constraints.weightx=1.0;
-		constraints.weighty=0.0;
+		constraints.weighty=1.0;
 		panel4.add(boton4,constraints);
 		
 		boton5=new JButton("Guardar");
+		imagen=new ImageIcon("src/imagenes/guardar.jpg");
+		icono=new ImageIcon(imagen.getImage().getScaledInstance(20, 20, Image.SCALE_DEFAULT));
+		boton5.setIcon(icono);
+		boton5.setIconTextGap(1);
+		boton5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+		boton5.setVerticalAlignment(javax.swing.SwingConstants.CENTER);
+		boton5.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+		boton5.setVerticalTextPosition(javax.swing.SwingConstants.CENTER);
 		constraints.gridx=1;
 		constraints.gridy=1;
 		constraints.gridwidth=1;
