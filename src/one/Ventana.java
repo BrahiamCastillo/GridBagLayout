@@ -6,7 +6,6 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.Vector;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -21,12 +20,12 @@ import javax.swing.border.Border;
 
 public class Ventana {
 	JFrame ventana;
-	JPanel panel1, panel2, panel3;
+	JPanel panel1, panel2, panel3, panel4;
 	Border titulo, blackline;
 	GridBagConstraints constraints;
-	JLabel uno, dos, tres, cuatro, foto;
-	JTextField campo1, campo2, campo3, campo4;
-	JButton boton1, boton2, boton3;
+	JLabel uno, dos, tres, cuatro, cinco, foto;
+	JTextField campo1, campo2, campo3, campo4, campo5;
+	JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8, boton9;
 	JComboBox combo;
 	
 	Ventana() {
@@ -86,6 +85,7 @@ public class Ventana {
 		constraints.gridy=5;
 		constraints.gridwidth=1;
 		constraints.gridheight=1;
+		constraints.anchor=GridBagConstraints.NORTHWEST;
 		constraints.fill=GridBagConstraints.NONE;
 		constraints.weightx=0.0;
 		constraints.weighty=0.0;
@@ -107,7 +107,8 @@ public class Ventana {
 		constraints.gridy=5;
 		constraints.gridwidth=1;
 		constraints.gridheight=1;
-		constraints.fill=GridBagConstraints.HORIZONTAL;
+		constraints.anchor=GridBagConstraints.NORTHWEST;
+		constraints.fill=GridBagConstraints.NONE;
 		constraints.weightx=1.0;
 		constraints.weighty=0.0;
 		panel1.add(cuatro,constraints);
@@ -117,12 +118,33 @@ public class Ventana {
 		constraints.gridy=6;
 		constraints.gridwidth=1;
 		constraints.gridheight=1;
-		constraints.anchor=GridBagConstraints.NORTHWEST;
 		constraints.fill=GridBagConstraints.HORIZONTAL;
 		constraints.weightx=0.0;
 		constraints.weighty=0.0;
 		panel1.add(campo4,constraints);
 		
+		cinco=new JLabel("Dirección:");
+		constraints.gridx=0;
+		constraints.gridy=7;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		constraints.anchor=GridBagConstraints.NORTHWEST;
+		constraints.fill=GridBagConstraints.NONE;
+		constraints.weightx=1.0;
+		constraints.weighty=0.0;
+		panel1.add(cinco,constraints);
+		
+		campo5=new JTextField();
+		constraints.gridx=0;
+		constraints.gridy=8;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		constraints.anchor=GridBagConstraints.NORTHWEST;
+		constraints.fill=GridBagConstraints.HORIZONTAL;
+		constraints.weightx=0.0;
+		constraints.weighty=1.0;
+		panel1.add(campo5,constraints);
+	
 		foto=new JLabel(" ");
 		foto.setFont(new Font("ARIAL",Font.CENTER_BASELINE,15));
 		blackline=BorderFactory.createLineBorder(Color.black);
@@ -195,17 +217,65 @@ public class Ventana {
 		JTable tabla=new JTable(filatotal,columna);
 		JScrollPane jsb=new JScrollPane(tabla);
 		panel3.add(jsb,BorderLayout.CENTER);
+		
+		panel4=new JPanel();
+		panel4.setLayout(new GridBagLayout());
+		boton4=new JButton("Ir");
+		constraints.gridx=0;
+		constraints.gridy=1;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		constraints.fill=GridBagConstraints.HORIZONTAL;
+		constraints.weightx=1.0;
+		constraints.weighty=0.0;
+		panel4.add(boton4,constraints);
+		
+		boton5=new JButton("Guardar");
+		constraints.gridx=1;
+		constraints.gridy=1;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		panel4.add(boton5,constraints);
+		
+		boton6=new JButton("Eliminar");
+		constraints.gridx=2;
+		constraints.gridy=1;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		panel4.add(boton6,constraints);
+		
+		boton7=new JButton("Modificar");
+		constraints.gridx=3;
+		constraints.gridy=1;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		panel4.add(boton7,constraints);
+		
+		boton8=new JButton("Limpiar");
+		constraints.gridx=4;
+		constraints.gridy=1;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		panel4.add(boton8,constraints);
+		
+		boton9=new JButton("Salir");
+		constraints.gridx=5;
+		constraints.gridy=1;
+		constraints.gridwidth=1;
+		constraints.gridheight=1;
+		panel4.add(boton9,constraints);
 	}
 	
 	void Estructura() {
 		ventana=new JFrame();
 		ventana.setTitle("Formulario de contacto");
-		ventana.setSize(400,400);
+		ventana.setSize(640,460);
 		ventana.setLayout(new BoxLayout(ventana.getContentPane(),BoxLayout.Y_AXIS));
 		Componentes();
 		ventana.add(panel1);
 		ventana.add(panel2);
 		ventana.add(panel3);
+		ventana.add(panel4);
 		
 		ventana.setLocationRelativeTo(null);
 		ventana.setVisible(true);
